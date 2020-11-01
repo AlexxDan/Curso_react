@@ -50,16 +50,86 @@ export default class comics extends Component {
       selecionado: comic,
     });
   };
+
+  crearComic = () => {
+    var titulo = document.getElementById("titulo").value;
+    var img = document.getElementById("imagen").value;
+    var description = document.getElementById("description").value;
+
+    var allComics = this.state.comics;
+
+    var comicNew = {
+      titulo: titulo,
+      imagen: img,
+      descripcion: description,
+    };
+
+    allComics.push(comicNew);
+
+    this.setState({
+      comics: allComics,
+    });
+  };
+
+  eliminarComics = (index) => {
+    var allComics = this.state.comics;
+
+    allComics.splice(index, 1);
+    this.setState({
+      comics: allComics,
+      selecionado: null,
+    });
+  };
+
+  updateCmoic = (index) => {
+    var allComics = this.state.comics;
+
+    var titulo = document.getElementById("titulo").value;
+    var img = document.getElementById("imagen").value;
+    var description = document.getElementById("description").value;
+
+    var comic = allComics;
+    comic.titulo = titulo;
+    comic.imagen = img;
+    comic.descripcion = description;
+
+    this.setState({
+      comics: allComics,
+    });
+  };
+
   render() {
     return (
       <div>
+        <label>Titulo</label>
+        <input type="text" id="titulo" />
+        <br />
+        <label>Imagen</label>
+        <input type="text" id="imagen" />
+        <br />
+        <label>Descripcion</label>
+        <input type="text" id="description" />
+        <br />
+        <button onClick={this.crearComic}>Nuevo Comics</button>
+
         {this.state.comics.map((comic, index) => {
           return (
-            <Comic
-              comic={comic}
-              key={index}
-              seleccionarComic={this.seleccionarComic}
-            />
+            <React.Fragment>
+              <Comic
+                index={index}
+                comic={comic}
+                key={index}
+                seleccionarComic={this.seleccionarComic}
+              />
+              <button
+                onClick={() => {
+                  this.updateCmoic(index);
+                }}
+                style={{ backgroundColor: "orange" }}
+              >
+                Actualizar Comics
+              </button>
+            </React.Fragment>
           );
         })}
 

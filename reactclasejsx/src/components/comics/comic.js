@@ -14,6 +14,14 @@ export default class comic extends Component {
         >
           Seleccionar Favorito
         </button>
+        <button
+          style={{ backgroundColor: "red" }}
+          onClick={() => {
+            this.props.eliminarComics(this.props.index);
+          }}
+        >
+          Eliminar Comics
+        </button>
       </div>
     );
   }
