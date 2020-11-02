@@ -4,14 +4,20 @@ import Numeros from "./../numeros/numeros";
 import Comics from "./../comics/comics";
 import PrimeraClase from "./../primeraClase/primeraClase";
 import Deportes from "./../deporte/deportes";
+import Menu from "./../rutas/Menu";
+import Collatz from "./../formulario/collatz";
+import Router from "./../Router";
 
 function App() {
   return (
     <div className="App">
       {/* <Numeros /> 
       <Comics />
-      <PrimeraClase />*/}
+      <PrimeraClase />
       <Deportes />
+      <Menu />
+      <Router />*/}
+      <Collatz />
     </div>
   );
 }
