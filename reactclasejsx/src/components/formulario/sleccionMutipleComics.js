@@ -68,6 +68,7 @@ export default class sleccionMutipleComics extends Component {
         posicion.push(i);
       }
     }
+
     for (var i = 0; i < posicion.length; i++) {
       datos.push(this.state.comics[posicion[i]]);
     }

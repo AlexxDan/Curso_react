@@ -4,6 +4,7 @@ export default class seleccionSumple extends Component {
   seleccionado = React.createRef();
   state = {
     filas: [],
+    opciones: [],
   };
 
   generarOption = () => {
@@ -16,7 +17,13 @@ export default class seleccionSumple extends Component {
         </option>
       );
     }
-    return option;
+    this.setState({ opciones: option });
+    //return option;
+  };
+
+  //METODO PARA CARGAR LOS OPTIONS SOLAMNENTE UNA VEZ CICILO DE VIDA
+  componentWillUnmount = () => {
+    this.generarOption();
   };
 
   tablaMultiplicar = (e) => {
@@ -45,7 +52,7 @@ export default class seleccionSumple extends Component {
         <h1>Seleccion de elementos</h1>
         <form onSubmit={this.tablaMultiplicar}>
           <select ref={this.seleccionado} name="seleccionado">
-            {this.generarOption()}
+            {this.state.opciones}
           </select>
           <button>GenerarTabla</button>
         </form>

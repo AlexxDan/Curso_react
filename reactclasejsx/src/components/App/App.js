@@ -10,6 +10,7 @@ import Router from "./../Router";
 import SeleccionSimple from "./../formulario/seleccionSumple";
 import SelectMultiple from "./../formulario/seleccionMultiple";
 import SelectMultComic from "./../formulario/sleccionMutipleComics";
+import SeleccionComponents from "./../formulario/seleccionComponent";
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
       <Router />
       <Collatz />
       <SeleccionSimple />      
-      <SelectMultiple />*/}
-
-      <SelectMultComic />
+      <SelectMultiple />
+      <SelectMultComic />*/}
+      <SeleccionComponents />
     </div>
   );
 }
