@@ -6,10 +6,12 @@ export default class collatz extends Component {
   state = {
     numeros: {},
   };
+
   calcularValor = (e) => {
     e.preventDefault();
     var num = parseInt(this.numero.current.value);
     var arrayNum = [];
+    arrayNum.push(num);
     var calculo = 0;
     while (num != 1) {
       if (num % 2 == 0) {
