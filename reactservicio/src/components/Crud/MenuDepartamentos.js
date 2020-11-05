@@ -4,7 +4,7 @@ export default class MenuDepartamentos extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           Home
         </a>
         <button
@@ -22,13 +22,13 @@ export default class MenuDepartamentos extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Home <span className="sr-only">(current)</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
+              <a className="nav-link" href="/create">
+                Crear Dept
               </a>
             </li>
             <li className="nav-item dropdown">
