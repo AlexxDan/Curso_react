@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "./../../Global";
+import { NavLink } from "react-router-dom";
 
 export default class detalleDepartamento extends Component {
   constructor(props) {
@@ -35,12 +36,12 @@ export default class detalleDepartamento extends Component {
       <div>
         {this.state.status == true && (
           <React.Fragment>
-            <a href="/">Volver al listado</a>
+            <NavLink to="/">Volver al listado</NavLink>
             <h1>Nombre : {this.state.departamento.nombre}</h1>
             <h3>Número : {this.state.departamento.numero}</h3>
             <h3>Localidad : {this.state.departamento.localidad}</h3>
-            <a
-              href={
+            <NavLink
+              to={
                 "/update/" +
                 this.state.departamento.numero +
                 "/" +
@@ -51,7 +52,13 @@ export default class detalleDepartamento extends Component {
               className="btn btn-info"
             >
               Modificar
-            </a>
+            </NavLink>
+            <NavLink
+              to={"/delete/" + this.state.departamento.numero}
+              className="btn btn-success"
+            >
+              Eliminar Departamento NavLink
+            </NavLink>
           </React.Fragment>
         )}
       </div>
